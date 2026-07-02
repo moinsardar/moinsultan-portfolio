@@ -29,6 +29,7 @@ import projOppongmed from "@/assets/proj-oppongmed.png";
 import projMoorlandvale from "@/assets/proj-moorlandvale.png";
 import projElite from "@/assets/proj-elitecertification.png";
 import msLogo from "@/assets/ms-logo.png";
+import cvAsset from "@/assets/moin-sultan-cv.pdf.asset.json";
 
 const portrait = portraitAsset.url;
 
@@ -385,7 +386,7 @@ function BentoAbout() {
               turn client vision into results that look great and perform better.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/cv/moin-sultan-cv.pdf" download className="btn-primary text-sm py-3">
+              <a href={cvAsset.url} download="Moin-Sultan-CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-3">
                 <Download size={16} /> Download CV
               </a>
               <a href="#contact" className="btn-ghost text-sm py-3">
