@@ -501,13 +501,6 @@ function ProjectsSection() {
               <motion.a
                 key={p.title}
                 href={p.url}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.open(p.url, "_blank", "noopener,noreferrer");
-                }}
                 {...stagger(i)}
                 className="bento overflow-hidden group block cursor-pointer"
               >
