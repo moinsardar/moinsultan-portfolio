@@ -224,17 +224,14 @@ function Index() {
               </div>
             </div>
             <div className="relative flex justify-center">
-              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-50 bg-gradient-to-br from-[#e8b84a] via-[#c9a84c] to-[#5c2018]" />
-              <div className="relative w-72 h-96 md:w-96 md:h-[28rem] rounded-3xl overflow-hidden ring-4 ring-[#e8b84a]/70 shadow-[0_0_80px_rgba(232,184,74,0.55)]">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#c9a84c]/15 via-transparent to-[#f5deb3]/15 pointer-events-none z-10" />
-                <img
-                  src={portrait}
-                  alt="Moin Sultan — SEO Specialist portrait"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <div className="absolute inset-0 rounded-full blur-3xl opacity-40 bg-gradient-to-br from-primary to-accent" />
+              <img
+                src={portrait}
+                alt="Moin Sultan — SEO Specialist portrait"
+                width={1024}
+                height={1024}
+                className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-2 border-primary/50 shadow-[0_0_60px_oklch(0.65_0.28_310/0.5)]"
+              />
             </div>
           </div>
         </div>
