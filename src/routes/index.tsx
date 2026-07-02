@@ -746,7 +746,7 @@ function Footer() {
   return (
     <footer className="px-6 py-10 border-t border-border">
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground text-center">
-        <p>Made with <span className="text-red-500">♥</span> by Qandeel Waheed</p>
+        <p>Made with <span className="text-red-500">♥</span> by Moin Sultan</p>
         <p>© 2025 All rights reserved.</p>
       </div>
     </footer>
