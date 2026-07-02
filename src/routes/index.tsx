@@ -612,7 +612,7 @@ function ContactSection() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/923096169298" target="_blank" rel="noreferrer" className="btn-primary">
+            <a href="https://api.whatsapp.com/send?phone=923096169298" target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle size={18} /> WhatsApp
             </a>
             <a href="mailto:moinseoagency@gmail.com" className="btn-ghost">
