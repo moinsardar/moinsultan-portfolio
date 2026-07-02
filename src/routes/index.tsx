@@ -373,6 +373,19 @@ function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs) => (
               <article key={cs.title} className="card-neon overflow-hidden group flex flex-col">
+                {cs.beforeImage && (
+                  <div className="aspect-[4/3] overflow-hidden bg-secondary/50 relative border-b border-border/60">
+                    <img
+                      src={cs.beforeImage}
+                      alt={`${cs.title} — SEO metrics before`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                    <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-black/70 border border-border/60 text-muted-foreground uppercase tracking-wider">
+                      Before
+                    </span>
+                  </div>
+                )}
                 <div className="aspect-[4/3] overflow-hidden bg-secondary/50 relative">
                   <img
                     src={cs.afterImage}
