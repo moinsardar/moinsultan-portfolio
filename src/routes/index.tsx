@@ -11,6 +11,7 @@ import {
   MessageCircle,
   ArrowRight,
   Code2,
+  Linkedin,
 } from "lucide-react";
 import portrait from "@/assets/moin-portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
