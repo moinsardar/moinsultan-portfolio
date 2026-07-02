@@ -22,9 +22,12 @@ import norwestBefore from "@/assets/norwest-before.jpg.asset.json";
 import norwestAfter from "@/assets/norwest-after.jpg.asset.json";
 import starprinters from "@/assets/starprinters.jpg.asset.json";
 import rskillpilot from "@/assets/rskillpilot.jpg.asset.json";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import projZeroTrust from "@/assets/proj-thezerotrust.png";
+import projDestinationRoyale from "@/assets/proj-destinationroyale.png";
+import projMalwarriors from "@/assets/proj-malwarriorshub.png";
+import projOppongmed from "@/assets/proj-oppongmed.png";
+import projMoorlandvale from "@/assets/proj-moorlandvale.png";
+import projWeslamic from "@/assets/proj-weslamic.png";
 import msLogo from "@/assets/ms-logo.png";
 
 const portrait = portraitAsset.url;
@@ -57,25 +60,52 @@ const skills = [
 
 const projects = [
   {
-    image: project1,
+    image: projZeroTrust,
+    url: "https://thezerotrust.co.uk/",
     category: "WordPress Development",
-    title: "Induction Portal UK",
-    desc: "Fire risk assessment platform helping UK businesses stay compliant.",
-    tags: ["WordPress", "PHP", "SEO"],
+    title: "The Zero Trust",
+    desc: "Nonprofit climate initiative building awareness and driving sustainable action.",
+    tags: ["WordPress", "Elementor", "SEO"],
   },
   {
-    image: project2,
+    image: projDestinationRoyale,
+    url: "https://destinationroyale.ae/",
     category: "WordPress Development",
     title: "Destination Royale",
-    desc: "Luxury real estate showcasing premium properties across the UAE.",
+    desc: "Luxury Dubai real estate platform with property listings and lead capture.",
     tags: ["Custom Post Type", "WordPress", "SEO"],
   },
   {
-    image: project3,
+    image: projMalwarriors,
+    url: "https://malwarriorshub.co.uk/",
+    category: "Agency Website",
+    title: "Malwarriors Hub",
+    desc: "Creative digital agency portfolio showcasing Shopify and WordPress services.",
+    tags: ["WordPress", "UI/UX", "Branding"],
+  },
+  {
+    image: projOppongmed,
+    url: "https://oppongmed.com/",
+    category: "Healthcare",
+    title: "OPPMed",
+    desc: "Occupational medical services website for workforce wellness and compliance.",
+    tags: ["WordPress", "SEO", "Corporate"],
+  },
+  {
+    image: projMoorlandvale,
+    url: "https://moorlandvale.com/",
+    category: "Healthcare",
+    title: "Moorland Vale",
+    desc: "ADHD assessments and treatment platform for children and adults in the UK.",
+    tags: ["WordPress", "Elementor", "SEO"],
+  },
+  {
+    image: projWeslamic,
+    url: "https://weslamic.co.uk/",
     category: "WooCommerce",
-    title: "Dezele Beauty Salon",
-    desc: "Modern salon website with clean booking experience.",
-    tags: ["WordPress", "UI/UX", "Payments"],
+    title: "Weslamic",
+    desc: "Smart Dhikr Ring e-commerce store with multi-language support and checkout.",
+    tags: ["WooCommerce", "WordPress", "Payments"],
   },
 ];
 
@@ -466,16 +496,26 @@ function ProjectsSection() {
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((p, i) => (
-            <motion.article key={p.title} {...stagger(i)} className="bento overflow-hidden group">
+            <motion.a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              {...stagger(i)}
+              className="bento overflow-hidden group block"
+            >
               <div className="bento-glow" />
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/3] overflow-hidden relative bg-background/60">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/70 backdrop-blur border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ArrowUpRight size={14} />
+                </div>
               </div>
               <div className="p-6">
                 <p className="text-xs uppercase tracking-wider text-accent">{p.category}</p>
@@ -489,7 +529,7 @@ function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
