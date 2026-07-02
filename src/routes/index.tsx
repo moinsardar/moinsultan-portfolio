@@ -224,6 +224,59 @@ function Index() {
         </div>
       </section>
 
+      {/* PROJECTS */}
+      <section id="projects" className="px-6 py-20 border-t border-border/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-sm text-accent font-medium tracking-wider uppercase">
+              My Work
+            </p>
+            <h2 className="mt-2 text-3xl md:text-5xl font-bold">
+              Featured <span className="text-gradient">Projects</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+              A selection of WordPress websites and SEO projects delivered for
+              clients across different industries.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((p) => (
+              <article key={p.title} className="card-neon overflow-hidden group">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary/50">
+                  <img
+                    src={p.image}
+                    alt={`${p.title} — ${p.category} project preview`}
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs text-accent font-medium tracking-wider uppercase">
+                    {p.category}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    {p.desc}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/30 text-foreground/80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
       <section id="about" className="px-6 py-20 border-t border-border/50">
         <div className="max-w-4xl mx-auto text-center">
