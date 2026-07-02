@@ -16,6 +16,9 @@ import portrait from "@/assets/moin-portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import seoProject1 from "@/assets/seo-project-1.jpg";
+import seoProject2 from "@/assets/seo-project-2.jpg";
+import seoProject3 from "@/assets/seo-project-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -101,7 +104,29 @@ const projects = [
     desc: "A beauty salon website offering professional services with a clean, modern, and easy-to-book experience.",
     tags: ["WordPress", "UI/UX", "Payment Integration"],
   },
+  {
+    image: seoProject1,
+    category: "SEO — Traffic Growth",
+    title: "Organic Traffic +420% in 6 Months",
+    desc: "Full technical + content SEO overhaul for a service business. Organic sessions grew from 1.2K to 6.3K per month.",
+    tags: ["Technical SEO", "Content", "Before / After"],
+  },
+  {
+    image: seoProject2,
+    category: "SEO — Keyword Rankings",
+    title: "15 Keywords to Google Page 1",
+    desc: "Keyword strategy and on-page optimization moved 15 target keywords from page 5-8 into the top 3 positions.",
+    tags: ["On-Page SEO", "Keyword Strategy", "Before / After"],
+  },
+  {
+    image: seoProject3,
+    category: "SEO — Site Audit",
+    title: "Site Health: 42 → 96 / 100",
+    desc: "Deep technical SEO audit and fixes: Core Web Vitals, schema, crawl errors, indexing. Site health nearly doubled.",
+    tags: ["Technical Audit", "Core Web Vitals", "Before / After"],
+  },
 ];
+
 
 function Index() {
   return (
