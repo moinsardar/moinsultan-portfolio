@@ -187,8 +187,24 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="home" className="relative px-6 pt-16 pb-24">
-        <div className="max-w-6xl mx-auto glow-border p-8 md:p-14">
+      <section
+        id="home"
+        className="relative px-6 pt-16 pb-24 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse at 70% 40%, rgba(168,85,247,0.28), transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(103,232,249,0.14), transparent 55%), linear-gradient(180deg, #05010f 0%, #0a0518 50%, #05010f 100%)",
+        }}
+      >
+        {/* faint code-monitor grid lines behind */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(168,85,247,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.5) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="relative max-w-6xl mx-auto rounded-3xl p-8 md:p-14 border border-[#a855f7]/30 bg-black/40 backdrop-blur-sm shadow-[0_0_80px_rgba(168,85,247,0.2)]">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/60 border border-border text-xs text-muted-foreground mb-6">
