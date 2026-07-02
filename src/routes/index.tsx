@@ -618,14 +618,8 @@ function ContactSection() {
             call for qualified inquiries.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <a href={whatsappLink} target="_blank" rel="noreferrer" className="btn-primary">
-              <MessageCircle size={18} /> WhatsApp
-            </a>
-            <a href="mailto:moinseoagency@gmail.com" className="btn-ghost">
-              <Mail size={18} /> Email me
-            </a>
-          </div>
+
+
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-left">
             {[
