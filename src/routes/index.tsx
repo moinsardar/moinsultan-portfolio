@@ -266,7 +266,7 @@ function Index() {
                   alt="Moin Sultan — SEO Specialist portrait"
                   width={1024}
                   height={1024}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
