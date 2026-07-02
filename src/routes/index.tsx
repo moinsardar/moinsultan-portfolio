@@ -496,16 +496,26 @@ function ProjectsSection() {
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((p, i) => (
-            <motion.article key={p.title} {...stagger(i)} className="bento overflow-hidden group">
+            <motion.a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              {...stagger(i)}
+              className="bento overflow-hidden group block"
+            >
               <div className="bento-glow" />
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/3] overflow-hidden relative bg-background/60">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/70 backdrop-blur border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ArrowUpRight size={14} />
+                </div>
               </div>
               <div className="p-6">
                 <p className="text-xs uppercase tracking-wider text-accent">{p.category}</p>
@@ -519,7 +529,7 @@ function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
