@@ -56,6 +56,7 @@ const services = [
 const skills = [
   "WordPress", "Elementor", "WooCommerce", "Google Analytics", "Search Console",
   "Ahrefs", "SEMrush", "Yoast SEO", "Rank Math", "Screaming Frog",
+  "Email Marketing", "Competitor Analysis",
 ];
 
 const projects = [
