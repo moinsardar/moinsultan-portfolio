@@ -515,14 +515,6 @@ function CaseStudiesSection() {
           {caseStudies.map((cs, i) => (
             <motion.article key={cs.title} {...stagger(i)} className="bento overflow-hidden group flex flex-col">
               <div className="bento-glow" />
-              {cs.beforeImage && (
-                <div className="aspect-video overflow-hidden relative border-b border-border bg-background/60 flex items-center justify-center p-2">
-                  <img src={cs.beforeImage} alt={`${cs.title} before`} loading="lazy" className="w-full h-full object-contain" />
-                  <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-black/70 border border-white/10 text-white/80 uppercase tracking-wider backdrop-blur-md z-10">
-                    Before
-                  </span>
-                </div>
-              )}
               <div className="aspect-video overflow-hidden relative bg-background/60 flex items-center justify-center p-2">
                 <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
                 <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow z-10">
