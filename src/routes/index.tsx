@@ -477,8 +477,16 @@ function Index() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="px-6 py-24 border-t border-border/50">
-        <div className="max-w-5xl mx-auto glow-border p-8 md:p-14">
+      <section
+        id="contact"
+        className="relative px-6 py-24 border-t border-[#e8b84a]/20 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse at top, rgba(232,184,74,0.18), transparent 60%), linear-gradient(180deg, #1a0f06 0%, #2a1a0a 50%, #12080a 100%)",
+        }}
+      >
+        <div className="absolute inset-0 pointer-events-none opacity-[0.07] bg-[radial-gradient(circle_at_50%_10%,#f5deb3_0%,transparent_40%)]" />
+        <div className="relative max-w-5xl mx-auto rounded-3xl p-8 md:p-14 border border-[#e8b84a]/30 bg-black/30 backdrop-blur-sm shadow-[0_0_80px_rgba(232,184,74,0.15)]">
           <div className="grid md:grid-cols-[auto,1fr] gap-8 md:gap-12 items-center">
             <div className="mx-auto md:mx-0">
               <div className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden ring-4 ring-[#e8b84a]/70 shadow-[0_0_80px_rgba(232,184,74,0.55)]">
