@@ -11,6 +11,7 @@ import {
   MessageCircle,
   ArrowRight,
   Code2,
+  Linkedin,
 } from "lucide-react";
 import portrait from "@/assets/moin-portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
@@ -476,54 +477,104 @@ function Index() {
 
       {/* CONTACT */}
       <section id="contact" className="px-6 py-24 border-t border-border/50">
-        <div className="max-w-4xl mx-auto glow-border p-8 md:p-14 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold">
-            Let's <span className="text-gradient">rank you higher</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Ready to grow your organic traffic? Reach out and let's talk about
-            your SEO goals.
-          </p>
-          <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-            <a
-              href="tel:+923096169298"
-              className="card-neon p-5 flex items-center gap-3 text-left"
-            >
-              <Phone className="text-accent" size={20} />
-              <div>
-                <p className="text-xs text-muted-foreground">Primary</p>
-                <p className="font-medium">0309-6169298</p>
+        <div className="max-w-5xl mx-auto glow-border p-8 md:p-14">
+          <div className="grid md:grid-cols-[auto,1fr] gap-8 md:gap-12 items-center">
+            <div className="mx-auto md:mx-0">
+              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-primary/40 shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+                <img
+                  src={portrait}
+                  alt="Moin Sultan — SEO Specialist"
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </a>
-            <a
-              href="tel:+920546904384"
-              className="card-neon p-5 flex items-center gap-3 text-left"
-            >
-              <Phone className="text-accent" size={20} />
-              <div>
-                <p className="text-xs text-muted-foreground">Secondary</p>
-                <p className="font-medium">0546-904384</p>
-              </div>
-            </a>
+            </div>
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-5xl font-bold">
+                Let's <span className="text-gradient">rank you higher</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-xl">
+                Ready to grow your organic traffic? Hire me — reach out on WhatsApp,
+                email, or LinkedIn and let's talk about your SEO goals.
+              </p>
+            </div>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+
+          <div className="mt-10 grid sm:grid-cols-2 gap-4">
             <a
               href="https://wa.me/923096169298"
               target="_blank"
               rel="noreferrer"
-              className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium"
+              className="card-neon p-5 flex items-center gap-3 text-left group"
             >
-              <MessageCircle size={18} /> WhatsApp Me
+              <span className="w-10 h-10 rounded-full bg-green-500/15 text-green-400 flex items-center justify-center group-hover:scale-110 transition">
+                <MessageCircle size={20} />
+              </span>
+              <div>
+                <p className="text-xs text-muted-foreground">WhatsApp · Primary</p>
+                <p className="font-medium">0309-6169298</p>
+              </div>
             </a>
             <a
-              href="mailto:hello@moinsultan.com"
+              href="https://wa.me/920546904384"
+              target="_blank"
+              rel="noreferrer"
+              className="card-neon p-5 flex items-center gap-3 text-left group"
+            >
+              <span className="w-10 h-10 rounded-full bg-green-500/15 text-green-400 flex items-center justify-center group-hover:scale-110 transition">
+                <MessageCircle size={20} />
+              </span>
+              <div>
+                <p className="text-xs text-muted-foreground">WhatsApp · Secondary</p>
+                <p className="font-medium">0546-904384</p>
+              </div>
+            </a>
+            <a
+              href="mailto:moinseoagency@gmail.com"
+              className="card-neon p-5 flex items-center gap-3 text-left group"
+            >
+              <span className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center group-hover:scale-110 transition">
+                <Mail size={20} />
+              </span>
+              <div>
+                <p className="text-xs text-muted-foreground">Email</p>
+                <p className="font-medium break-all">moinseoagency@gmail.com</p>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/moin-sultan-seo"
+              target="_blank"
+              rel="noreferrer"
+              className="card-neon p-5 flex items-center gap-3 text-left group"
+            >
+              <span className="w-10 h-10 rounded-full bg-[#0A66C2]/20 text-[#4ea3ff] flex items-center justify-center group-hover:scale-110 transition">
+                <Linkedin size={20} />
+              </span>
+              <div>
+                <p className="text-xs text-muted-foreground">LinkedIn</p>
+                <p className="font-medium">in/moin-sultan-seo</p>
+              </div>
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://wa.me/923096169298?text=Hi%20Moin%2C%20I%27d%20like%20to%20hire%20you%20for%20SEO."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium"
+            >
+              <MessageCircle size={18} /> Hire Me on WhatsApp
+            </a>
+            <a
+              href="mailto:moinseoagency@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/60 transition"
             >
-              <Mail size={18} /> Email
+              <Mail size={18} /> Send Email
             </a>
           </div>
         </div>
       </section>
+
 
       <footer className="px-6 py-8 border-t border-border/50 text-center text-sm text-muted-foreground">
         © {new Date().getFullYear()} Moin Sultan · SEO Specialist. All rights reserved.
