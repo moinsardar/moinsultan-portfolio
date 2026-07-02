@@ -461,7 +461,7 @@ function Index() {
             Passionate about <span className="text-gradient">organic growth</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed [animation-delay:100ms] animate-fade-in">
-            I'm a <span className="text-foreground font-medium">Digital Marketing graduate</span> with
+            I'm a <span className="text-foreground font-medium">Software Engineering graduate</span> with
             over three years of freelance experience working with clients from
             around the world. I've also spent time working on-site, where I gained
             hands-on experience collaborating with teams and managing real-world
