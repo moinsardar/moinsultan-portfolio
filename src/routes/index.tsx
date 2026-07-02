@@ -16,6 +16,8 @@ import {
   Sparkles,
   MapPin,
   Clock,
+  Quote,
+  Star,
 } from "lucide-react";
 import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
 import norwestBefore from "@/assets/norwest-before.jpg.asset.json";
@@ -187,6 +189,7 @@ function Index() {
         <ProjectsSection />
         <CaseStudiesSection />
         <SkillsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
 
@@ -637,6 +640,69 @@ function SkillsSection() {
             >
               {s}
             </motion.span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────── TESTIMONIALS ─────────────────────────────── */
+
+const testimonials = [
+  {
+    quote: "Moin transformed our organic traffic. Within 4 months our rankings jumped and leads doubled. Truly a pro at what he does.",
+    name: "Sarah Mitchell",
+    role: "Founder, Norwest Cosmetic Surgery",
+    initials: "SM",
+  },
+  {
+    quote: "Fast, professional and always on top of the details. Our WordPress site is faster, cleaner and finally ranks on page 1.",
+    name: "James Carter",
+    role: "Director, Star Printers UK",
+    initials: "JC",
+  },
+  {
+    quote: "Best SEO specialist I've worked with. Clear reports, real results and honest communication throughout the project.",
+    name: "Ahmed Raza",
+    role: "CEO, Elite Certification",
+    initials: "AR",
+  },
+];
+
+function TestimonialsSection() {
+  return (
+    <section id="testimonials" className="px-6 py-24 relative">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader
+          eyebrow="Testimonials"
+          title={<>What clients <span className="text-gradient-brand">say</span>.</>}
+          subtitle="Real feedback from businesses I've helped grow."
+        />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              {...stagger(i)}
+              className="bento p-6 flex flex-col gap-4 relative"
+            >
+              <Quote className="text-primary/40" size={28} />
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, s) => (
+                  <Star key={s} size={14} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">"{t.quote}"</p>
+              <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-sm font-semibold text-foreground">
+                  {t.initials}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
