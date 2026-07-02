@@ -337,22 +337,6 @@ function Hero() {
             </div>
 
             {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute -top-4 -right-4 rounded-2xl border border-border bg-card/90 backdrop-blur-md px-4 py-3 shadow-elev"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400/30 to-emerald-500/20 flex items-center justify-center">
-                  <TrendingUp size={16} className="text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Avg Growth</p>
-                  <p className="font-display font-bold text-sm text-foreground">+215%</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
