@@ -27,7 +27,7 @@ import projDestinationRoyale from "@/assets/proj-destinationroyale.png";
 import projMalwarriors from "@/assets/proj-malwarriorshub.png";
 import projOppongmed from "@/assets/proj-oppongmed.png";
 import projMoorlandvale from "@/assets/proj-moorlandvale.png";
-import projWeslamic from "@/assets/proj-weslamic.png";
+import projElite from "@/assets/proj-elitecertification.png";
 import msLogo from "@/assets/ms-logo.png";
 
 const portrait = portraitAsset.url;
@@ -100,12 +100,12 @@ const projects = [
     tags: ["WordPress", "Elementor", "SEO"],
   },
   {
-    image: projWeslamic,
-    url: "https://weslamic.co.uk/",
-    category: "WooCommerce",
-    title: "Weslamic",
-    desc: "Smart Dhikr Ring e-commerce store with multi-language support and checkout.",
-    tags: ["WooCommerce", "WordPress", "Payments"],
+    image: projElite,
+    url: "https://elitecertification.info/",
+    category: "Corporate Website",
+    title: "Elite Certification",
+    desc: "ISO certification & management system training portal for global clients.",
+    tags: ["WordPress", "SEO", "Corporate"],
   },
 ];
 
