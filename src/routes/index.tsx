@@ -643,7 +643,8 @@ function ContactSection() {
               {
                 label: "Gmail",
                 value: "moinseoagency@gmail.com",
-                href: "mailto:moinseoagency@gmail.com",
+                href: "https://mail.google.com/mail/?view=cm&fs=1&to=moinseoagency@gmail.com&su=SEO%20Project%20Inquiry",
+                external: true,
                 brand: "bg-red-500/10",
                 svg: (
                   <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" aria-hidden>
