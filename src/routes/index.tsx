@@ -16,6 +16,9 @@ import portrait from "@/assets/moin-portrait.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import seoProject1 from "@/assets/seo-project-1.jpg";
+import seoProject2 from "@/assets/seo-project-2.jpg";
+import seoProject3 from "@/assets/seo-project-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
