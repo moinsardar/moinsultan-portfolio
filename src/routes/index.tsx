@@ -510,14 +510,27 @@ function CaseStudiesSection() {
         />
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {caseStudies.map((cs, i) => (
+          {caseStudies.map((cs, i) => {
+            const hasBefore = "beforeImage" in cs && Boolean(cs.beforeImage);
+
+            return (
             <motion.article key={cs.title} {...stagger(i)} className="bento overflow-hidden group flex flex-col">
               <div className="bento-glow" />
-              <div className="aspect-video overflow-hidden relative bg-background/60 flex items-center justify-center p-2">
-                <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
-                <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow z-10">
-                  Live Result
-                </span>
+              <div className={`relative bg-background/60 p-2 ${hasBefore ? "grid grid-cols-2 gap-2" : "aspect-video flex items-center justify-center"}`}>
+                {hasBefore && (
+                  <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-background/60 flex items-center justify-center">
+                    <img src={cs.beforeImage} alt={`${cs.title} before result`} loading="lazy" className="w-full h-full object-contain" />
+                    <span className="absolute top-2 left-2 text-[9px] font-semibold px-2 py-0.5 rounded-full bg-card/85 text-muted-foreground uppercase tracking-wider z-10">
+                      Before
+                    </span>
+                  </div>
+                )}
+                <div className={`relative aspect-video overflow-hidden rounded-xl border border-border bg-background/60 flex items-center justify-center ${hasBefore ? "" : "w-full h-full border-0 rounded-none bg-transparent"}`}>
+                  <img src={cs.afterImage} alt={`${cs.title} after result`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
+                  <span className="absolute top-2 left-2 text-[9px] font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground uppercase tracking-wider shadow-glow z-10">
+                    After
+                  </span>
+                </div>
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <p className="text-xs uppercase tracking-wider text-accent">SEO Case Study</p>
@@ -546,7 +559,8 @@ function CaseStudiesSection() {
                 </div>
               </div>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
