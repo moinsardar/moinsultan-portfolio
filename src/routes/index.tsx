@@ -370,15 +370,57 @@ function Index() {
             </p>
           </div>
 
-          <div className="space-y-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs) => (
-              <article key={cs.title} className="card-neon p-6 md:p-8">
-                <div className="flex flex-wrap items-baseline justify-between gap-3 mb-6">
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-semibold">{cs.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">{cs.site}</p>
+              <article key={cs.title} className="card-neon overflow-hidden group flex flex-col">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary/50 relative">
+                  <img
+                    src={cs.afterImage}
+                    alt={`${cs.title} — SEO metrics after`}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary/80 to-accent/80 text-white uppercase tracking-wider shadow-lg">
+                    After
+                  </span>
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-xs text-accent font-medium tracking-wider uppercase">
+                    SEO Case Study
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold">{cs.title}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{cs.site}</p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {cs.summary}
+                  </p>
+
+                  {/* Metrics */}
+                  <div className="mt-5 grid grid-cols-2 gap-2">
+                    {cs.metrics.map((m) => (
+                      <div
+                        key={m.label}
+                        className="rounded-lg border border-border/60 bg-secondary/30 p-2.5"
+                      >
+                        <p className="text-[9px] uppercase tracking-wider text-muted-foreground">
+                          {m.label}
+                        </p>
+                        <div className="mt-1 flex items-baseline gap-1.5">
+                          <span className="text-[11px] text-muted-foreground line-through">
+                            {m.before}
+                          </span>
+                          <ArrowRight size={10} className="text-accent" />
+                          <span className="text-sm font-bold text-gradient">
+                            {m.after}
+                          </span>
+                        </div>
+                        <p className="mt-0.5 text-[10px] text-accent font-medium">
+                          {m.change}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex flex-wrap gap-2">
+
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {cs.tags.map((t) => (
                       <span
                         key={t}
@@ -389,69 +431,10 @@ function Index() {
                     ))}
                   </div>
                 </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                  {cs.summary}
-                </p>
-
-                {/* Screenshots */}
-                <div
-                  className={`grid gap-4 mb-6 ${cs.beforeImage ? "md:grid-cols-2" : "md:grid-cols-1"}`}
-                >
-                  {cs.beforeImage && (
-                    <figure className="rounded-xl overflow-hidden border border-border/60 bg-secondary/30">
-                      <div className="px-3 py-2 text-xs font-medium text-muted-foreground bg-secondary/60 border-b border-border/60 uppercase tracking-wider">
-                        Before
-                      </div>
-                      <img
-                        src={cs.beforeImage}
-                        alt={`${cs.title} — SEO metrics before`}
-                        loading="lazy"
-                        className="w-full h-auto object-cover"
-                      />
-                    </figure>
-                  )}
-                  <figure className="rounded-xl overflow-hidden border border-primary/40 bg-secondary/30 shadow-[0_0_30px_oklch(0.65_0.28_310/0.2)]">
-                    <div className="px-3 py-2 text-xs font-semibold bg-gradient-to-r from-primary/20 to-accent/20 border-b border-primary/40 uppercase tracking-wider text-gradient">
-                      After
-                    </div>
-                    <img
-                      src={cs.afterImage}
-                      alt={`${cs.title} — SEO metrics after`}
-                      loading="lazy"
-                      className="w-full h-auto object-cover"
-                    />
-                  </figure>
-                </div>
-
-                {/* Metrics comparison */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {cs.metrics.map((m) => (
-                    <div
-                      key={m.label}
-                      className="rounded-lg border border-border/60 bg-secondary/30 p-4"
-                    >
-                      <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                        {m.label}
-                      </p>
-                      <div className="mt-2 flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground line-through">
-                          {m.before}
-                        </span>
-                        <ArrowRight size={12} className="text-accent" />
-                        <span className="text-lg font-bold text-gradient">
-                          {m.after}
-                        </span>
-                      </div>
-                      <p className="mt-1 text-xs text-accent font-medium">
-                        {m.change}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
