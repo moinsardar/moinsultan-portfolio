@@ -10,8 +10,12 @@ import {
   Mail,
   MessageCircle,
   ArrowRight,
+  Code2,
 } from "lucide-react";
 import portrait from "@/assets/moin-portrait.jpg";
+import project1 from "@/assets/project-1.jpg";
+import project2 from "@/assets/project-2.jpg";
+import project3 from "@/assets/project-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -55,9 +59,17 @@ const services = [
     title: "SEO Audit & Reporting",
     desc: "Detailed monthly reports with keyword rankings, traffic growth, and next-step recommendations — full transparency.",
   },
+  {
+    icon: Code2,
+    title: "WordPress Development",
+    desc: "Custom WordPress websites — fast, SEO-optimized, secure, and easy to manage. Elementor, WooCommerce, and custom themes.",
+  },
 ];
 
 const skills = [
+  "WordPress",
+  "Elementor",
+  "WooCommerce",
   "Google Analytics",
   "Search Console",
   "Ahrefs",
@@ -65,6 +77,30 @@ const skills = [
   "Yoast SEO",
   "Rank Math",
   "Screaming Frog",
+];
+
+const projects = [
+  {
+    image: project1,
+    category: "WordPress Development",
+    title: "Induction Portal UK",
+    desc: "Professional fire risk assessment website helping businesses across the UK stay safe and compliant.",
+    tags: ["WordPress", "PHP", "Custom Theme", "SEO"],
+  },
+  {
+    image: project2,
+    category: "WordPress Development",
+    title: "Destination Royale",
+    desc: "Luxury real estate website showcasing premium properties across the UAE with elegant design and clear details.",
+    tags: ["Custom Post Type", "WordPress", "PHP", "SEO"],
+  },
+  {
+    image: project3,
+    category: "WooCommerce",
+    title: "Dezele Beauty Salon",
+    desc: "A beauty salon website offering professional services with a clean, modern, and easy-to-book experience.",
+    tags: ["WordPress", "UI/UX", "Payment Integration"],
+  },
 ];
 
 function Index() {
@@ -83,6 +119,7 @@ function Index() {
             <a href="#home" className="hover:text-foreground transition">Home</a>
             <a href="#about" className="hover:text-foreground transition">About</a>
             <a href="#services" className="hover:text-foreground transition">Services</a>
+            <a href="#projects" className="hover:text-foreground transition">Projects</a>
             <a href="#skills" className="hover:text-foreground transition">Skills</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </div>
@@ -182,6 +219,59 @@ function Index() {
                   {s.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="px-6 py-20 border-t border-border/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-sm text-accent font-medium tracking-wider uppercase">
+              My Work
+            </p>
+            <h2 className="mt-2 text-3xl md:text-5xl font-bold">
+              Featured <span className="text-gradient">Projects</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+              A selection of WordPress websites and SEO projects delivered for
+              clients across different industries.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((p) => (
+              <article key={p.title} className="card-neon overflow-hidden group">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary/50">
+                  <img
+                    src={p.image}
+                    alt={`${p.title} — ${p.category} project preview`}
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs text-accent font-medium tracking-wider uppercase">
+                    {p.category}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    {p.desc}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/30 text-foreground/80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </div>
