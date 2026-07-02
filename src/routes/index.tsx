@@ -616,7 +616,7 @@ function ContactSection() {
             <a href="https://wa.me/923096169298" target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle size={18} /> WhatsApp
             </a>
-            <a href="mailto:hello@moinsultan.com" className="btn-ghost">
+            <a href="mailto:moinseoagency@gmail.com" className="btn-ghost">
               <Mail size={18} /> Email me
             </a>
           </div>
@@ -624,8 +624,8 @@ function ContactSection() {
           <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
             {[
               { icon: Phone, label: "Phone", value: "+92 309 6169298", href: "tel:+923096169298" },
-              { icon: Mail, label: "Email", value: "hello@moinsultan.com", href: "mailto:hello@moinsultan.com" },
-              { icon: Linkedin, label: "LinkedIn", value: "@moinsultan", href: "https://linkedin.com" },
+              { icon: Mail, label: "Email", value: "moinseoagency@gmail.com", href: "mailto:moinseoagency@gmail.com" },
+              { icon: Linkedin, label: "LinkedIn", value: "moin-sultan-seo", href: "https://www.linkedin.com/in/moin-sultan-seo" },
             ].map(({ icon: Icon, label, value, href }) => (
               <a key={label} href={href} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-border bg-card/40 backdrop-blur-md p-4 hover:border-primary/50 transition-all">
                 <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
