@@ -385,7 +385,7 @@ function BentoAbout() {
               turn client vision into results that look great and perform better.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/cv/moin-sultan-cv.pdf" download className="btn-primary text-sm py-3">
+              <a href={cvAsset.url} download="Moin-Sultan-CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-3">
                 <Download size={16} /> Download CV
               </a>
               <a href="#contact" className="btn-ghost text-sm py-3">
