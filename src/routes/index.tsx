@@ -105,32 +105,50 @@ const projects = [
     desc: "A beauty salon website offering professional services with a clean, modern, and easy-to-book experience.",
     tags: ["WordPress", "UI/UX", "Payment Integration"],
   },
+];
+
+const caseStudies = [
   {
-    image: norwestBefore.url,
-    category: "Norwest Cosmetic Surgery — Before",
-    title: "Starting Point: 66 Organic Visits",
-    desc: "Baseline Semrush snapshot for norwestcosmeticsurgery.com.au — Authority Score 10, only 243 keywords ranking, and 0 AI Search visibility.",
-    tags: ["Semrush", "Baseline Audit", "Before"],
+    beforeImage: norwestBefore.url,
+    afterImage: norwestAfter.url,
+    site: "norwestcosmeticsurgery.com.au",
+    title: "Norwest Cosmetic Surgery",
+    summary:
+      "Full SEO campaign for an Australian cosmetic surgery clinic — technical fixes, content strategy, and AI Search optimization more than doubled organic traffic in a few months.",
+    metrics: [
+      { label: "Organic Traffic", before: "66", after: "670", change: "+102%" },
+      { label: "Organic Keywords", before: "243", after: "600", change: "+9.1%" },
+      { label: "AI Visibility", before: "0", after: "27", change: "New" },
+      { label: "Traffic Share (US)", before: "0%", after: "22%", change: "+22pt" },
+    ],
+    tags: ["Semrush", "Technical SEO", "AI Search"],
   },
   {
-    image: norwestAfter.url,
-    category: "Norwest Cosmetic Surgery — After",
-    title: "Organic Traffic +102%, 600 Keywords",
-    desc: "After SEO campaign: Organic Traffic jumped to 670/mo (+102%), 600 ranking keywords (+9.1%), and AI Visibility grew from 0 to 27 across ChatGPT, Gemini & Google AI.",
-    tags: ["Technical SEO", "Content", "AI Search"],
-  },
-  {
-    image: starprinters.url,
-    category: "Star Printers UK — GSC Performance",
-    title: "903 Clicks · 63.5K Impressions (3 Months)",
-    desc: "Google Search Console results for starprinters.co.uk — steady clicks and impressions with an average position of 16.8 across a 3-month window.",
+    afterImage: starprinters.url,
+    site: "starprinters.co.uk",
+    title: "Star Printers UK",
+    summary:
+      "Ongoing SEO for a UK print business — Google Search Console shows steady clicks and impressions across a 3-month window, with average position improving to 16.8.",
+    metrics: [
+      { label: "Total Clicks", before: "~0", after: "903", change: "New Traffic" },
+      { label: "Impressions", before: "Low", after: "63.5K", change: "Massive Reach" },
+      { label: "Avg. CTR", before: "—", after: "1.4%", change: "Baseline set" },
+      { label: "Avg. Position", before: "40+", after: "16.8", change: "Climbing" },
+    ],
     tags: ["Google Search Console", "UK Market", "On-Page SEO"],
   },
   {
-    image: rskillpilot.url,
-    category: "RSkill Pilot — Rapid Growth",
-    title: "13.9K Clicks · 80.4K Impressions in 7 Days",
-    desc: "Explosive growth for rskillpilot.com — 17.3% average CTR and position 8.5, with clicks scaling from ~0 to 158/day in under a week.",
+    afterImage: rskillpilot.url,
+    site: "rskillpilot.com",
+    title: "RSkill Pilot",
+    summary:
+      "Explosive growth campaign — clicks scaled from near zero to 158/day within a week, with a strong 17.3% CTR and Google position 8.5 across target keywords.",
+    metrics: [
+      { label: "Weekly Clicks", before: "~0", after: "13.9K", change: "🚀 Growth" },
+      { label: "Impressions", before: "~0", after: "80.4K", change: "New Reach" },
+      { label: "Avg. CTR", before: "—", after: "17.3%", change: "Excellent" },
+      { label: "Avg. Position", before: "50+", after: "8.5", change: "Page 1" },
+    ],
     tags: ["Google Search Console", "CTR Optimization", "Growth"],
   },
 ];
@@ -153,6 +171,7 @@ function Index() {
             <a href="#about" className="hover:text-foreground transition">About</a>
             <a href="#services" className="hover:text-foreground transition">Services</a>
             <a href="#projects" className="hover:text-foreground transition">Projects</a>
+            <a href="#case-studies" className="hover:text-foreground transition">Case Studies</a>
             <a href="#skills" className="hover:text-foreground transition">Skills</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </div>
@@ -303,6 +322,107 @@ function Index() {
                       </span>
                     ))}
                   </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDIES — Before & After */}
+      <section id="case-studies" className="px-6 py-20 border-t border-border/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-sm text-accent font-medium tracking-wider uppercase">
+              SEO Case Studies
+            </p>
+            <h2 className="mt-2 text-3xl md:text-5xl font-bold">
+              Real <span className="text-gradient">Before &amp; After</span> Results
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+              Actual Semrush &amp; Google Search Console screenshots — see the
+              metrics before I started, and where they are now.
+            </p>
+          </div>
+
+          <div className="space-y-10">
+            {caseStudies.map((cs) => (
+              <article key={cs.title} className="card-neon p-6 md:p-8">
+                <div className="flex flex-wrap items-baseline justify-between gap-3 mb-6">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-semibold">{cs.title}</h3>
+                    <p className="text-xs text-muted-foreground mt-1">{cs.site}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {cs.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2.5 py-1 rounded-full bg-primary/10 border border-primary/30 text-foreground/80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  {cs.summary}
+                </p>
+
+                {/* Screenshots */}
+                <div
+                  className={`grid gap-4 mb-6 ${cs.beforeImage ? "md:grid-cols-2" : "md:grid-cols-1"}`}
+                >
+                  {cs.beforeImage && (
+                    <figure className="rounded-xl overflow-hidden border border-border/60 bg-secondary/30">
+                      <div className="px-3 py-2 text-xs font-medium text-muted-foreground bg-secondary/60 border-b border-border/60 uppercase tracking-wider">
+                        Before
+                      </div>
+                      <img
+                        src={cs.beforeImage}
+                        alt={`${cs.title} — SEO metrics before`}
+                        loading="lazy"
+                        className="w-full h-auto object-cover"
+                      />
+                    </figure>
+                  )}
+                  <figure className="rounded-xl overflow-hidden border border-primary/40 bg-secondary/30 shadow-[0_0_30px_oklch(0.65_0.28_310/0.2)]">
+                    <div className="px-3 py-2 text-xs font-semibold bg-gradient-to-r from-primary/20 to-accent/20 border-b border-primary/40 uppercase tracking-wider text-gradient">
+                      After
+                    </div>
+                    <img
+                      src={cs.afterImage}
+                      alt={`${cs.title} — SEO metrics after`}
+                      loading="lazy"
+                      className="w-full h-auto object-cover"
+                    />
+                  </figure>
+                </div>
+
+                {/* Metrics comparison */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {cs.metrics.map((m) => (
+                    <div
+                      key={m.label}
+                      className="rounded-lg border border-border/60 bg-secondary/30 p-4"
+                    >
+                      <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
+                        {m.label}
+                      </p>
+                      <div className="mt-2 flex items-baseline gap-2">
+                        <span className="text-sm text-muted-foreground line-through">
+                          {m.before}
+                        </span>
+                        <ArrowRight size={12} className="text-accent" />
+                        <span className="text-lg font-bold text-gradient">
+                          {m.after}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs text-accent font-medium">
+                        {m.change}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </article>
             ))}
