@@ -10,8 +10,12 @@ import {
   Mail,
   MessageCircle,
   ArrowRight,
+  Code2,
 } from "lucide-react";
 import portrait from "@/assets/moin-portrait.jpg";
+import project1 from "@/assets/project-1.jpg";
+import project2 from "@/assets/project-2.jpg";
+import project3 from "@/assets/project-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -55,9 +59,17 @@ const services = [
     title: "SEO Audit & Reporting",
     desc: "Detailed monthly reports with keyword rankings, traffic growth, and next-step recommendations — full transparency.",
   },
+  {
+    icon: Code2,
+    title: "WordPress Development",
+    desc: "Custom WordPress websites — fast, SEO-optimized, secure, and easy to manage. Elementor, WooCommerce, and custom themes.",
+  },
 ];
 
 const skills = [
+  "WordPress",
+  "Elementor",
+  "WooCommerce",
   "Google Analytics",
   "Search Console",
   "Ahrefs",
@@ -65,6 +77,30 @@ const skills = [
   "Yoast SEO",
   "Rank Math",
   "Screaming Frog",
+];
+
+const projects = [
+  {
+    image: project1,
+    category: "WordPress Development",
+    title: "Induction Portal UK",
+    desc: "Professional fire risk assessment website helping businesses across the UK stay safe and compliant.",
+    tags: ["WordPress", "PHP", "Custom Theme", "SEO"],
+  },
+  {
+    image: project2,
+    category: "WordPress Development",
+    title: "Destination Royale",
+    desc: "Luxury real estate website showcasing premium properties across the UAE with elegant design and clear details.",
+    tags: ["Custom Post Type", "WordPress", "PHP", "SEO"],
+  },
+  {
+    image: project3,
+    category: "WooCommerce",
+    title: "Dezele Beauty Salon",
+    desc: "A beauty salon website offering professional services with a clean, modern, and easy-to-book experience.",
+    tags: ["WordPress", "UI/UX", "Payment Integration"],
+  },
 ];
 
 function Index() {
