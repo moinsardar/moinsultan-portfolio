@@ -223,15 +223,36 @@ function Index() {
                 </a>
               </div>
             </div>
-            <div className="relative flex justify-center">
-              <div className="absolute inset-0 rounded-full blur-3xl opacity-40 bg-gradient-to-br from-primary to-accent" />
-              <img
-                src={portrait}
-                alt="Moin Sultan — SEO Specialist portrait"
-                width={1024}
-                height={1024}
-                className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-2 border-primary/50 shadow-[0_0_60px_oklch(0.65_0.28_310/0.5)]"
-              />
+            <div className="relative flex justify-center items-center py-10">
+              {/* Outer purple glow */}
+              <div className="absolute inset-0 rounded-full blur-3xl opacity-60 bg-gradient-to-br from-[#a855f7] via-[#7e22ce] to-[#4c1d95]" />
+
+              {/* Floating quote chips */}
+              <div className="absolute top-2 left-2 md:top-4 md:left-6 z-20 rotate-[-6deg] px-3 py-2 rounded-lg bg-black/70 border border-[#a855f7]/40 shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm">
+                <p className="text-[10px] md:text-xs font-semibold leading-tight text-white">
+                  Rank.<br />Optimize.<br />Grow.
+                </p>
+              </div>
+              <div className="absolute top-2 right-2 md:top-4 md:right-6 z-20 rotate-[6deg] px-3 py-2 rounded-lg bg-black/70 border border-[#a855f7]/40 shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm">
+                <p className="text-[10px] md:text-xs font-semibold leading-tight text-white">
+                  Dream.<br />Build.<br />Bigger.
+                </p>
+              </div>
+
+              {/* Neon light strips */}
+              <div className="absolute left-4 md:left-8 top-1/3 h-24 md:h-32 w-1 rounded-full bg-[#67e8f9] shadow-[0_0_25px_#67e8f9,0_0_50px_#67e8f9] z-10" />
+              <div className="absolute right-4 md:right-8 top-1/3 h-24 md:h-32 w-1 rounded-full bg-[#f0abfc] shadow-[0_0_25px_#f0abfc,0_0_50px_#f0abfc] z-10" />
+
+              {/* Portrait in glowing purple ring */}
+              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden ring-4 ring-[#a855f7] shadow-[0_0_80px_rgba(168,85,247,0.7),inset_0_0_60px_rgba(168,85,247,0.3)]">
+                <img
+                  src={portrait}
+                  alt="Moin Sultan — SEO Specialist portrait"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
