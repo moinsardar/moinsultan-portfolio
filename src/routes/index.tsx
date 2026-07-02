@@ -481,7 +481,8 @@ function Index() {
         <div className="max-w-5xl mx-auto glow-border p-8 md:p-14">
           <div className="grid md:grid-cols-[auto,1fr] gap-8 md:gap-12 items-center">
             <div className="mx-auto md:mx-0">
-              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-primary/40 shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-[#e8b84a]/70 shadow-[0_0_60px_rgba(232,184,74,0.55)]">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#c9a84c]/20 via-transparent to-[#f5deb3]/20 pointer-events-none z-10" />
                 <img
                   src={portrait}
                   alt="Moin Sultan — SEO Specialist"
