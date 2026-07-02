@@ -504,6 +504,7 @@ function ProjectsSection() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
                   window.open(p.url, "_blank", "noopener,noreferrer");
                 }}
