@@ -453,25 +453,29 @@ function Index() {
 
       {/* ABOUT */}
       <section id="about" className="px-6 py-20 border-t border-border/50">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <p className="text-sm text-accent font-medium tracking-wider uppercase">
             About Me
           </p>
           <h2 className="mt-2 text-3xl md:text-5xl font-bold">
             Passionate about <span className="text-gradient">organic growth</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
-            I'm Moin Sultan, an SEO specialist with 3+ years of experience helping
-            brands, startups and local businesses climb Google's rankings. My work
-            combines technical precision, data-driven content strategy, and honest
-            white-hat link building — no shortcuts, just sustainable growth.
+          <p className="mt-6 text-muted-foreground leading-relaxed [animation-delay:100ms] animate-fade-in">
+            I'm a <span className="text-foreground font-medium">Digital Marketing graduate</span> with
+            over three years of freelance experience working with clients from
+            around the world. I've also spent time working on-site, where I gained
+            hands-on experience collaborating with teams and managing real-world
+            projects.
           </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            I've delivered 50+ successful SEO campaigns for 30+ happy clients
-            across e-commerce, service businesses and personal brands worldwide.
+          <p className="mt-4 text-muted-foreground leading-relaxed [animation-delay:200ms] animate-fade-in">
+            I'm passionate about creating clean, functional, and user-friendly
+            websites that bring ideas to life. My strong communication skills help
+            me understand exactly what clients need, turning their vision into
+            something that looks great and performs even better.
           </p>
         </div>
       </section>
+
 
       {/* SKILLS */}
       <section id="skills" className="px-6 py-20 border-t border-border/50">
