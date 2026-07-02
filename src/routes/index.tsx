@@ -510,14 +510,27 @@ function CaseStudiesSection() {
         />
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {caseStudies.map((cs, i) => (
+          {caseStudies.map((cs, i) => {
+            const hasBefore = "beforeImage" in cs && Boolean(cs.beforeImage);
+
+            return (
             <motion.article key={cs.title} {...stagger(i)} className="bento overflow-hidden group flex flex-col">
               <div className="bento-glow" />
-              <div className="aspect-video overflow-hidden relative bg-background/60 flex items-center justify-center p-2">
-                <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
-                <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow z-10">
-                  Live Result
-                </span>
+              <div className={`relative bg-background/60 p-2 ${hasBefore ? "grid grid-cols-2 gap-2" : "aspect-video flex items-center justify-center"}`}>
+                {hasBefore && (
+                  <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-background/60 flex items-center justify-center">
+                    <img src={cs.beforeImage} alt={`${cs.title} before result`} loading="lazy" className="w-full h-full object-contain" />
+                    <span className="absolute top-2 left-2 text-[9px] font-semibold px-2 py-0.5 rounded-full bg-card/85 text-muted-foreground uppercase tracking-wider z-10">
+                      Before
+                    </span>
+                  </div>
+                )}
+                <div className={`relative aspect-video overflow-hidden rounded-xl border border-border bg-background/60 flex items-center justify-center ${hasBefore ? "" : "w-full h-full border-0 rounded-none bg-transparent"}`}>
+                  <img src={cs.afterImage} alt={`${cs.title} after result`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
+                  <span className="absolute top-2 left-2 text-[9px] font-semibold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground uppercase tracking-wider shadow-glow z-10">
+                    After
+                  </span>
+                </div>
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <p className="text-xs uppercase tracking-wider text-accent">SEO Case Study</p>
@@ -546,7 +559,8 @@ function CaseStudiesSection() {
                 </div>
               </div>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -583,6 +597,9 @@ function SkillsSection() {
 /* ─────────────────────────────── CONTACT ─────────────────────────────── */
 
 function ContactSection() {
+  const whatsappLink =
+    "https://wa.me/923096169298?text=Hi%20Moin%2C%20I%20want%20to%20discuss%20an%20SEO%20project.";
+
   return (
     <section id="contact" className="px-6 py-24 border-t border-border">
       <div className="max-w-6xl mx-auto">
@@ -602,7 +619,7 @@ function ContactSection() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <a href="https://api.whatsapp.com/send?phone=923096169298" target="_blank" rel="noreferrer" className="btn-primary">
+            <a href={whatsappLink} target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle size={18} /> WhatsApp
             </a>
             <a href="mailto:moinseoagency@gmail.com" className="btn-ghost">
@@ -610,15 +627,15 @@ function ContactSection() {
             </a>
           </div>
 
-          <div className="mt-12 grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-left">
             {[
               {
-                label: "Phone",
+                label: "WhatsApp",
                 value: "+92 309 6169298",
-                href: "tel:+923096169298",
-                brand: "bg-emerald-500/15 border-emerald-400/30",
+                href: whatsappLink,
+                brand: "bg-emerald-500/15",
                 svg: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#10b981">
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#10b981" aria-hidden>
                     <path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.4-.5-3.6 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.4c0-.6-.4-1-1-1z" />
                   </svg>
                 ),
@@ -627,9 +644,9 @@ function ContactSection() {
                 label: "Gmail",
                 value: "moinseoagency@gmail.com",
                 href: "mailto:moinseoagency@gmail.com",
-                brand: "bg-red-500/10 border-red-400/30",
+                brand: "bg-red-500/10",
                 svg: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5">
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" aria-hidden>
                     <path fill="#4285F4" d="M22 5.5v13c0 .8-.7 1.5-1.5 1.5H18V9.4l-6 4.5-6-4.5V20H3.5C2.7 20 2 19.3 2 18.5v-13c0-.8.7-1.5 1.5-1.5H4l8 6 8-6h.5c.8 0 1.5.7 1.5 1.5z" />
                     <path fill="#34A853" d="M6 20V9.4L2 6.5v12c0 .8.7 1.5 1.5 1.5H6z" />
                     <path fill="#FBBC04" d="M18 20h2.5c.8 0 1.5-.7 1.5-1.5v-12l-4 2.9V20z" />
@@ -642,21 +659,21 @@ function ContactSection() {
                 label: "LinkedIn",
                 value: "moin-sultan-seo",
                 href: "https://www.linkedin.com/in/moin-sultan-seo",
-                brand: "bg-sky-500/15 border-sky-400/30",
+                brand: "bg-sky-500/15",
                 svg: (
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#0A66C2">
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#0A66C2" aria-hidden>
                     <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 11-.01-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
                   </svg>
                 ),
               },
             ].map(({ label, value, href, brand, svg }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-border bg-card/40 backdrop-blur-md p-4 hover:border-primary/50 hover:-translate-y-0.5 transition-all">
-                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center shrink-0 ${brand}`}>
+              <a key={label} href={href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/30 backdrop-blur-md px-3 py-2 hover:border-primary/50 transition-all">
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${brand}`}>
                   {svg}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{label}</p>
-                  <p className="text-sm font-medium text-foreground truncate">{value}</p>
+                  <p className="text-[9px] uppercase tracking-wider text-muted-foreground leading-none">{label}</p>
+                  <p className="text-xs font-medium text-foreground truncate max-w-[180px]">{value}</p>
                 </div>
               </a>
             ))}
