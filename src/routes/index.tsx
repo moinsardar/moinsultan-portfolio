@@ -474,6 +474,16 @@ function Index() {
             me understand exactly what clients need, turning their vision into
             something that looks great and performs even better.
           </p>
+          <div className="mt-8 flex justify-center [animation-delay:300ms] animate-fade-in">
+            <a
+              href="/cv/moin-sultan-cv.pdf"
+              download
+              className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
+          </div>
         </div>
       </section>
 
