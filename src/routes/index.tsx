@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 import {
   Search,
   TrendingUp,
@@ -18,6 +19,9 @@ import {
   Clock,
   Quote,
   Star,
+  Menu,
+  X,
+  ArrowUp,
 } from "lucide-react";
 import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
 import norwestBefore from "@/assets/norwest-before.jpg.asset.json";
