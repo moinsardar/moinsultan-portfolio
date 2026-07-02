@@ -198,6 +198,7 @@ function Index() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
