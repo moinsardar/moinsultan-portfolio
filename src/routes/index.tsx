@@ -51,6 +51,8 @@ const services = [
   { icon: FileText, title: "SEO Content", desc: "Blogs, service pages and product copy crafted to rank and convert." },
   { icon: BarChart3, title: "Audit & Reporting", desc: "Monthly reports with rankings, traffic growth and next steps." },
   { icon: Code2, title: "WordPress Dev", desc: "Fast, SEO-optimized, secure WordPress with Elementor & WooCommerce." },
+  { icon: Mail, title: "Email Marketing", desc: "Campaigns, automations and newsletters that nurture leads and drive sales." },
+  { icon: BarChart3, title: "Competitor Analysis", desc: "Deep competitor research to uncover gaps, keywords and winning strategies." },
 ];
 
 const skills = [
