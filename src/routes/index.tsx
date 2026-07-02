@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 import {
   Search,
   TrendingUp,
@@ -18,6 +19,9 @@ import {
   Clock,
   Quote,
   Star,
+  Menu,
+  X,
+  ArrowUp,
 } from "lucide-react";
 import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
 import norwestBefore from "@/assets/norwest-before.jpg.asset.json";
@@ -194,6 +198,7 @@ function Index() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
@@ -209,12 +214,12 @@ function Header() {
     { href: "#case-studies", label: "Case Studies" },
     { href: "#contact", label: "Contact" },
   ];
+  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#home" className="flex items-center gap-2.5 group">
-          <img src={msLogo} alt="Moin Sultan logo" width={40} height={40} className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.55_0.24_275/0.5)]" />
-          
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <a href="#home" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
+          <img src={msLogo} alt="Moin Sultan logo" width={56} height={56} className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-[0_0_16px_oklch(0.55_0.24_275/0.6)]" />
         </a>
         <div className="hidden md:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur-md px-1.5 py-1.5">
           {links.map((l) => (
@@ -231,8 +236,72 @@ function Header() {
           Let's Talk
           <ArrowUpRight size={16} />
         </a>
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 rounded-lg border border-border bg-card/50 text-foreground"
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </nav>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl"
+          >
+            <div className="flex flex-col p-4 gap-1">
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-3 text-sm text-foreground rounded-lg hover:bg-primary/10 transition-all"
+                >
+                  {l.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="btn-primary text-sm py-3 mt-2 justify-center"
+              >
+                Let's Talk <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
+  );
+}
+
+/* ─────────────────────────────── SCROLL TO TOP ─────────────────────────────── */
+
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 20 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-elev flex items-center justify-center hover:scale-110 transition-transform"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={18} />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 }
 
