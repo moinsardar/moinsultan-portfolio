@@ -292,7 +292,7 @@ function Hero() {
                 alt="Moin Sultan — SEO Specialist"
                 width={1024}
                 height={1024}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               {/* Overlay chip */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 backdrop-blur-lg px-4 py-3">
