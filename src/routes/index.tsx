@@ -16,6 +16,8 @@ import {
   Sparkles,
   MapPin,
   Clock,
+  Quote,
+  Star,
 } from "lucide-react";
 import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
 import norwestBefore from "@/assets/norwest-before.jpg.asset.json";
@@ -187,6 +189,7 @@ function Index() {
         <ProjectsSection />
         <CaseStudiesSection />
         <SkillsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
 
