@@ -243,17 +243,6 @@ function Index() {
               {/* Outer purple glow */}
               <div className="absolute inset-0 rounded-full blur-3xl opacity-60 bg-gradient-to-br from-[#a855f7] via-[#7e22ce] to-[#4c1d95]" />
 
-              {/* Floating quote chips */}
-              <div className="absolute top-2 left-2 md:top-4 md:left-6 z-20 rotate-[-6deg] px-3 py-2 rounded-lg bg-black/70 border border-[#a855f7]/40 shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm">
-                <p className="text-[10px] md:text-xs font-semibold leading-tight text-white">
-                  Rank.<br />Optimize.<br />Grow.
-                </p>
-              </div>
-              <div className="absolute top-2 right-2 md:top-4 md:right-6 z-20 rotate-[6deg] px-3 py-2 rounded-lg bg-black/70 border border-[#a855f7]/40 shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm">
-                <p className="text-[10px] md:text-xs font-semibold leading-tight text-white">
-                  Dream.<br />Build.<br />Bigger.
-                </p>
-              </div>
 
 
               {/* Portrait in glowing purple ring */}
