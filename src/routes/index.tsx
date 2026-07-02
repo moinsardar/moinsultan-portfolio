@@ -518,7 +518,7 @@ function CaseStudiesSection() {
               <div className="aspect-video overflow-hidden relative bg-background/60 flex items-center justify-center p-2">
                 <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
                 <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow z-10">
-                  After
+                  Live Result
                 </span>
               </div>
               <div className="p-6 flex flex-col flex-1">
