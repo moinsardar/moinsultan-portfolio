@@ -27,6 +27,7 @@ import rskillpilot from "@/assets/rskillpilot.jpg.asset.json";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import msLogo from "@/assets/ms-logo.png";
 
 const portrait = portraitAsset.url;
 
@@ -177,10 +178,8 @@ function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" className="flex items-center gap-2.5 group">
-          <span className="relative w-9 h-9 rounded-xl flex items-center justify-center font-display font-bold text-sm bg-gradient-to-br from-primary to-accent text-white shadow-glow">
-            MS
-          </span>
-          <span className="font-display font-semibold tracking-tight text-foreground">Moin<span className="text-primary">.</span></span>
+          <img src={msLogo} alt="Moin Sultan logo" width={40} height={40} className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.55_0.24_275/0.5)]" />
+          <span className="font-display font-semibold tracking-tight text-foreground">Moin Sultan<span className="text-primary">.</span></span>
         </a>
         <div className="hidden md:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur-md px-1.5 py-1.5">
           {links.map((l) => (
@@ -292,7 +291,7 @@ function Hero() {
                 alt="Moin Sultan — SEO Specialist"
                 width={1024}
                 height={1024}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               {/* Overlay chip */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 backdrop-blur-lg px-4 py-3">
@@ -517,16 +516,16 @@ function CaseStudiesSection() {
             <motion.article key={cs.title} {...stagger(i)} className="bento overflow-hidden group flex flex-col">
               <div className="bento-glow" />
               {cs.beforeImage && (
-                <div className="aspect-[4/3] overflow-hidden relative border-b border-border">
-                  <img src={cs.beforeImage} alt={`${cs.title} before`} loading="lazy" className="w-full h-full object-cover" />
-                  <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-black/70 border border-white/10 text-white/80 uppercase tracking-wider backdrop-blur-md">
+                <div className="aspect-video overflow-hidden relative border-b border-border bg-background/60 flex items-center justify-center p-2">
+                  <img src={cs.beforeImage} alt={`${cs.title} before`} loading="lazy" className="w-full h-full object-contain" />
+                  <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-black/70 border border-white/10 text-white/80 uppercase tracking-wider backdrop-blur-md z-10">
                     Before
                   </span>
                 </div>
               )}
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow">
+              <div className="aspect-video overflow-hidden relative bg-background/60 flex items-center justify-center p-2">
+                <img src={cs.afterImage} alt={`${cs.title} after`} loading="lazy" className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700" />
+                <span className="absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-white uppercase tracking-wider shadow-glow z-10">
                   After
                 </span>
               </div>
