@@ -119,6 +119,7 @@ function Index() {
             <a href="#home" className="hover:text-foreground transition">Home</a>
             <a href="#about" className="hover:text-foreground transition">About</a>
             <a href="#services" className="hover:text-foreground transition">Services</a>
+            <a href="#projects" className="hover:text-foreground transition">Projects</a>
             <a href="#skills" className="hover:text-foreground transition">Skills</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </div>
