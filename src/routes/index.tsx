@@ -105,32 +105,50 @@ const projects = [
     desc: "A beauty salon website offering professional services with a clean, modern, and easy-to-book experience.",
     tags: ["WordPress", "UI/UX", "Payment Integration"],
   },
+];
+
+const caseStudies = [
   {
-    image: norwestBefore.url,
-    category: "Norwest Cosmetic Surgery — Before",
-    title: "Starting Point: 66 Organic Visits",
-    desc: "Baseline Semrush snapshot for norwestcosmeticsurgery.com.au — Authority Score 10, only 243 keywords ranking, and 0 AI Search visibility.",
-    tags: ["Semrush", "Baseline Audit", "Before"],
+    beforeImage: norwestBefore.url,
+    afterImage: norwestAfter.url,
+    site: "norwestcosmeticsurgery.com.au",
+    title: "Norwest Cosmetic Surgery",
+    summary:
+      "Full SEO campaign for an Australian cosmetic surgery clinic — technical fixes, content strategy, and AI Search optimization more than doubled organic traffic in a few months.",
+    metrics: [
+      { label: "Organic Traffic", before: "66", after: "670", change: "+102%" },
+      { label: "Organic Keywords", before: "243", after: "600", change: "+9.1%" },
+      { label: "AI Visibility", before: "0", after: "27", change: "New" },
+      { label: "Traffic Share (US)", before: "0%", after: "22%", change: "+22pt" },
+    ],
+    tags: ["Semrush", "Technical SEO", "AI Search"],
   },
   {
-    image: norwestAfter.url,
-    category: "Norwest Cosmetic Surgery — After",
-    title: "Organic Traffic +102%, 600 Keywords",
-    desc: "After SEO campaign: Organic Traffic jumped to 670/mo (+102%), 600 ranking keywords (+9.1%), and AI Visibility grew from 0 to 27 across ChatGPT, Gemini & Google AI.",
-    tags: ["Technical SEO", "Content", "AI Search"],
-  },
-  {
-    image: starprinters.url,
-    category: "Star Printers UK — GSC Performance",
-    title: "903 Clicks · 63.5K Impressions (3 Months)",
-    desc: "Google Search Console results for starprinters.co.uk — steady clicks and impressions with an average position of 16.8 across a 3-month window.",
+    afterImage: starprinters.url,
+    site: "starprinters.co.uk",
+    title: "Star Printers UK",
+    summary:
+      "Ongoing SEO for a UK print business — Google Search Console shows steady clicks and impressions across a 3-month window, with average position improving to 16.8.",
+    metrics: [
+      { label: "Total Clicks", before: "~0", after: "903", change: "New Traffic" },
+      { label: "Impressions", before: "Low", after: "63.5K", change: "Massive Reach" },
+      { label: "Avg. CTR", before: "—", after: "1.4%", change: "Baseline set" },
+      { label: "Avg. Position", before: "40+", after: "16.8", change: "Climbing" },
+    ],
     tags: ["Google Search Console", "UK Market", "On-Page SEO"],
   },
   {
-    image: rskillpilot.url,
-    category: "RSkill Pilot — Rapid Growth",
-    title: "13.9K Clicks · 80.4K Impressions in 7 Days",
-    desc: "Explosive growth for rskillpilot.com — 17.3% average CTR and position 8.5, with clicks scaling from ~0 to 158/day in under a week.",
+    afterImage: rskillpilot.url,
+    site: "rskillpilot.com",
+    title: "RSkill Pilot",
+    summary:
+      "Explosive growth campaign — clicks scaled from near zero to 158/day within a week, with a strong 17.3% CTR and Google position 8.5 across target keywords.",
+    metrics: [
+      { label: "Weekly Clicks", before: "~0", after: "13.9K", change: "🚀 Growth" },
+      { label: "Impressions", before: "~0", after: "80.4K", change: "New Reach" },
+      { label: "Avg. CTR", before: "—", after: "17.3%", change: "Excellent" },
+      { label: "Avg. Position", before: "50+", after: "8.5", change: "Page 1" },
+    ],
     tags: ["Google Search Console", "CTR Optimization", "Growth"],
   },
 ];
