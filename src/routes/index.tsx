@@ -211,7 +211,7 @@ function Header() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" className="flex items-center gap-2.5 group">
           <img src={msLogo} alt="Moin Sultan logo" width={40} height={40} className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.55_0.24_275/0.5)]" />
-          <span className="font-display font-semibold tracking-tight text-foreground">Moin Sultan<span className="text-primary">.</span></span>
+          
         </a>
         <div className="hidden md:flex items-center gap-1 rounded-full border border-border bg-card/40 backdrop-blur-md px-1.5 py-1.5">
           {links.map((l) => (
@@ -745,9 +745,9 @@ function ContactSection() {
 function Footer() {
   return (
     <footer className="px-6 py-10 border-t border-border">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>© 2026 Moin Sultan. Crafted with care.</p>
-        <p>SEO Specialist · WordPress Developer</p>
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground text-center">
+        <p>Made with <span className="text-red-500">♥</span> by Qandeel Waheed</p>
+        <p>© 2025 All rights reserved.</p>
       </div>
     </footer>
   );
