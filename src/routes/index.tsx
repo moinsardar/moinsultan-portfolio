@@ -624,7 +624,7 @@ function ContactSection() {
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-left">
             {[
               {
-                label: "WhatsApp",
+                label: "WhatsApp (PAK)",
                 value: "+92 309 6169298",
                 href: whatsappLink,
                 brand: "bg-emerald-500/15",
