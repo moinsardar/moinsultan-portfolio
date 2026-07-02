@@ -13,7 +13,8 @@ import {
   Code2,
   Linkedin,
 } from "lucide-react";
-import portrait from "@/assets/moin-portrait.jpg";
+import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
+const portrait = portraitAsset.url;
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
