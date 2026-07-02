@@ -29,6 +29,7 @@ import projOppongmed from "@/assets/proj-oppongmed.png";
 import projMoorlandvale from "@/assets/proj-moorlandvale.png";
 import projElite from "@/assets/proj-elitecertification.png";
 import msLogo from "@/assets/ms-logo.png";
+import cvAsset from "@/assets/moin-sultan-cv.pdf.asset.json";
 
 const portrait = portraitAsset.url;
 
