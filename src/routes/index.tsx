@@ -255,9 +255,6 @@ function Index() {
                 </p>
               </div>
 
-              {/* Neon light strips */}
-              <div className="absolute left-4 md:left-8 top-1/3 h-24 md:h-32 w-1 rounded-full bg-[#67e8f9] shadow-[0_0_25px_#67e8f9,0_0_50px_#67e8f9] z-10" />
-              <div className="absolute right-4 md:right-8 top-1/3 h-24 md:h-32 w-1 rounded-full bg-[#f0abfc] shadow-[0_0_25px_#f0abfc,0_0_50px_#f0abfc] z-10" />
 
               {/* Portrait in glowing purple ring */}
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden ring-4 ring-[#a855f7] shadow-[0_0_80px_rgba(168,85,247,0.7),inset_0_0_60px_rgba(168,85,247,0.3)]">
