@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Code2,
   Linkedin,
+  Download,
 } from "lucide-react";
 import portraitAsset from "@/assets/moin-portrait.jpg.asset.json";
 const portrait = portraitAsset.url;
