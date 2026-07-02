@@ -635,6 +635,17 @@ function ContactSection() {
                 ),
               },
               {
+                label: "WhatsApp (KSA)",
+                value: "+966 54 690 4384",
+                href: "https://wa.me/966546904384?text=Hi%20Moin%2C%20I%20want%20to%20discuss%20an%20SEO%20project.",
+                brand: "bg-emerald-500/15",
+                svg: (
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#10b981" aria-hidden>
+                    <path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.4-.5-3.6 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.4c0-.6-.4-1-1-1z" />
+                  </svg>
+                ),
+              },
+              {
                 label: "Gmail",
                 value: "moinseoagency@gmail.com",
                 href: "https://mail.google.com/mail/?view=cm&fs=1&to=moinseoagency@gmail.com&su=SEO%20Project%20Inquiry",
