@@ -495,43 +495,69 @@ function ProjectsSection() {
         />
 
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((p, i) => (
-            <motion.a
-              key={p.title}
-              href={p.url}
-              target="_blank"
-              rel="noreferrer"
-              {...stagger(i)}
-              className="bento overflow-hidden group block"
-            >
-              <div className="bento-glow" />
-              <div className="aspect-[4/3] overflow-hidden relative bg-background/60">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/70 backdrop-blur border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowUpRight size={14} />
+          {projects.map((p, i) => {
+            const domain = p.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+            return (
+              <motion.a
+                key={p.title}
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(p.url, "_blank", "noopener,noreferrer");
+                }}
+                {...stagger(i)}
+                className="bento overflow-hidden group block cursor-pointer"
+              >
+                <div className="bento-glow" />
+                {/* Browser-style mockup */}
+                <div className="p-3 pb-0">
+                  <div className="rounded-xl overflow-hidden border border-border bg-background/80 shadow-2xl shadow-primary/5">
+                    {/* Browser chrome */}
+                    <div className="flex items-center gap-2 px-3 py-2 bg-card/80 border-b border-border">
+                      <div className="flex gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+                      </div>
+                      <div className="flex-1 mx-2 rounded-md bg-background/60 border border-border/60 px-2 py-0.5 text-[10px] text-muted-foreground truncate">
+                        {domain}
+                      </div>
+                      <ArrowUpRight size={12} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    {/* Screenshot */}
+                    <div className="aspect-[16/10] overflow-hidden relative bg-background">
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-[900ms] ease-out"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card/40 via-transparent to-transparent" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className="text-xs uppercase tracking-wider text-accent">{p.category}</p>
-                <h3 className="mt-2 font-display text-xl">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span key={t} className="text-[10px] px-2.5 py-1 rounded-full border border-border text-muted-foreground uppercase tracking-wider">
-                      {t}
-                    </span>
-                  ))}
+                <div className="p-6">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-accent">{p.category}</p>
+                  <h3 className="mt-2 font-display text-xl flex items-center gap-2 group-hover:text-primary transition-colors">
+                    {p.title}
+                    <ArrowUpRight size={16} className="opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span key={t} className="text-[10px] px-2.5 py-1 rounded-full border border-border text-muted-foreground uppercase tracking-wider">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.a>
-          ))}
+              </motion.a>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );
