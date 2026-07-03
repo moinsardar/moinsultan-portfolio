@@ -7,7 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-const nav = [
+const nav: ReadonlyArray<{ to: string; label: string; icon: React.ComponentType<{ size?: number; className?: string }>; exact?: boolean }> = [
   { to: "/app", label: "Dashboard", icon: Sparkles, exact: true },
   { to: "/app/finder", label: "Email Finder", icon: Search },
   { to: "/app/verifier", label: "Verifier", icon: ShieldCheck },
@@ -15,7 +15,7 @@ const nav = [
   { to: "/app/leads", label: "Leads", icon: Users },
   { to: "/app/billing", label: "Billing", icon: CreditCard },
   { to: "/app/settings", label: "Settings", icon: Settings },
-] as const;
+];
 
 export function AppShell({ title, children }: { title: string; children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
